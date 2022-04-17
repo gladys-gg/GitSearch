@@ -10,7 +10,8 @@ import { ProfileService } from 'src/app/profile.service';
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
-  styleUrls: ['./users.component.css']
+  styleUrls: ['./users.component.css'],
+  providers: [ GithubService, ProfileService]
 })
 export class UsersComponent implements OnInit {
 
@@ -22,33 +23,39 @@ export class UsersComponent implements OnInit {
   loading!: boolean;
   profileRequest: any;
 
-  constructor(githubService:GithubService, profileService:ProfileService) { }
+  constructor(_githubService:GithubService, _profileService:ProfileService) { }
 
 
-  public getRepo(){
-    this.loading = true;
-    let promise = new Promise<void>((resolve, reject)=>{
-      this.githubService.getRepo( this.userName).toPromise().then((response: Repos[]) =>{
-        this.repos = response;
-        resolve();
-      },
-        (      error: any) =>{
-          this.errorMessage='An error was encountered';
-          this.loading = false;
-      }
+  // public async getRepo(){
+  //   this.loading = true;
+  //   let promise = new Promise<void>((_resolve, _reject)=>{
+  //     this.githubService.getRepo( 'gladys-gg').toPromise().then((response: Repos[]) =>{
+  //       this.repos = response;
+  //       console.log(this.repos);
+  //     },
+  //       (      _error: any) =>{
+  //         this.errorMessage='An error was encountered';
+  //         this.loading = false;
+  //     }
       
-      );
-    });
-    return promise;
+  //     );
+  //   });
+  //   return promise;
+  // }
+
+  public async getRepo(): Promise<void>{
+    const repos =await this.githubService.getRepo('gladys-gg')
+    return repos;
   }
+  
   public getUsers(){
     this.loading = true;
-     let promise = new Promise<void>((resolve, reject)=>{
+     let promise = new Promise<void>((resolve, _reject)=>{
        this.profileRequest.getUsers(this.userName).toPromise().then((response: any) =>{
          this.users = response;
          resolve();
        },
-         (       error: any) =>{
+         (       _error: any) =>{
          this.errorMessage = "An error was encountered";
          this.loading = false;
        }
@@ -57,6 +64,7 @@ export class UsersComponent implements OnInit {
      return promise;
   }
   ngOnInit(): void {
+    console.log(this.getRepo)
   }
   
 
