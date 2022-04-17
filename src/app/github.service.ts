@@ -10,8 +10,12 @@ import { Repos } from './repos';
 })
 export class GithubService {
 
+  api:string = 'https://api.github.com'
   constructor(private http:HttpClient) { 
+ 
+  }
 
-  
+  getRepo(userName:string){
+    return this.http.get('https://api.github.com/users/{$username}/repos');
   }
 }
