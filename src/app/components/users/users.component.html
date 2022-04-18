@@ -1,5 +1,24 @@
-<ul>
-    <li *ngFor="let user of user | async">
-        {{user.avatar_url}}
-    </li>
-</ul>
+<div class="bg-img">
+<div class="text-center  mx-5 wow fadeIn">
+    <h3 class="mb-4">
+      <h2 class="h2 text-info mb-3 animated bounce infinite
+      ">Search the user on Github <i class="fas fa-id-card"></i></h2>
+      
+    </h3>
+<div class="mb-4" >
+    <!-- Search form -->
+  <input class="form-control text-center" name="userName" type="text"  placeholder="Input the username" aria-label="Search">
+  
+  </div>
+  <div class="mb-4">
+  <a target="_blank" class="btn btn-outline-white btn-lg text-info" type="button"   >Find User 
+    <i class="fas fa-search ml-2 animated wobble infinite"></i>
+  </a>
+</div>
+<div class="form-group mb-4">
+  <a target="_blank" class="btn btn-outline-white btn-lg text-info" type="button"  > Show Repos 
+    <i class="fas fa-search ml-2 animated wobble infinite"></i>
+  </a>
+</div>
+</div>
+</div>

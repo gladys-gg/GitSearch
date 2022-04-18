@@ -1,0 +1,20 @@
+.bg-img {
+    background-image: url(
+"https://images.unsplash.com/photo-1649856092355-eee498b1d0f2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80");
+    min-height: 380px;
+    background-size: cover;
+}
+.form-control{
+    display: inline-block;
+    width: 30%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #f1f1f1;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    align-items: center;
+}

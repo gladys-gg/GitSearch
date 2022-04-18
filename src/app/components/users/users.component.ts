@@ -22,7 +22,7 @@ export class UsersComponent implements OnInit {
  
   ngOnInit(): void {
  
-   this.profileService.getUsers()
+  //  this.profileService.getUsers()
     
   }
   
