@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { resolve } from 'dns';
 import { Observable } from 'rxjs';
+import { GithubService } from 'src/app/github.service';
 import { ProfileService } from 'src/app/profile.service';
-import { userInterface } from 'src/app/userInterface';
+import { userInterface } from 'src/app/user';
+
 
 
 
@@ -14,17 +17,11 @@ import { userInterface } from 'src/app/userInterface';
 })
 export class UsersComponent implements OnInit {
 
-  users: userInterface[]=[]
-
-  constructor(private profileService:ProfileService) { }
-
 
  
-  ngOnInit(): void {
- 
-  //  this.profileService.getUsers()
-    
-  }
   
 
+  constructor(private profileService:ProfileService, gitService:GithubService) { }
+  ngOnInit(): void {
+  }
 }

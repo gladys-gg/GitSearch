@@ -1,31 +1,24 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { userInterface } from './userInterface';
+import { Observable, throwError } from 'rxjs';
+import { catchError, retry } from 'rxjs/operators';
+import { userInterface } from './user';
+
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProfileService {
-  getUsers() {
-    throw new Error('Method not implemented.');
-  }
-  baseURL = 'https://api.github.com/users'
-  Users: userInterface[] = [];
-  constructor(private http:HttpClient) { }
-
-}
-// getUsers();{
-//  return this.http.get<userInterface>(this.baseURL+'users')
-// }
+ 
+  user:[] = [];
+  apiUrl: 'https://api.github.com/users' = "https://api.github.com/users";
+  
+  constructor(private http: HttpClient) { }
 
 
-
-
-
-
-function getUsers() {
-  throw new Error('Function not implemented.');
+getUser(){
+  return this.http.get(this.apiUrl)
 }
 
+}
