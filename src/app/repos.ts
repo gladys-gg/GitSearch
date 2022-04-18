@@ -1,3 +1,8 @@
 export class Repos {
-    constructor(public userName:string, public description:string){}
-}
+    constructor(
+        public name: string,
+        public description: string,
+        public homepage: string,
+        public html_url: string
+      ) { }
+    }

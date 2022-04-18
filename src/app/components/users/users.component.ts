@@ -1,10 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { GithubService } from 'src/app/github.service';
-import { ProfileService } from 'src/app/profile.service';
-import { userInterface } from 'src/app/user';
-
-
-
+import { User } from 'src/app/user';
 
 
 @Component({
@@ -14,12 +10,30 @@ import { userInterface } from 'src/app/user';
 
 })
 export class UsersComponent implements OnInit {
-
-
- 
-  
-
-  constructor(private profileService:ProfileService, gitService:GithubService) { }
-  ngOnInit(): void {
+  api: string = 'https://api.github.com/users/${username}/repos';
+  data = [];
+  constructor(private http: HttpClient) {}
+  ngOnInit() {
+    this.getUsers();
+  }
+  getUsers() {
+    const promise = new Promise<void>((resolve, reject) => {
+      const apiURL = this.api;
+      this.http.get<User[]>(apiURL).subscribe({
+        next: (res: any) => {
+          this.data = res.map((res: any) => {
+            return new User(res.userName, res.email, res.followers_url, res.html_url);
+          });
+          resolve();
+        },
+        error: (err: any) => {
+          reject(err);
+        },
+        complete: () => {
+          console.log('complete');
+        },
+      });
+    });
+    return promise;
   }
 }
