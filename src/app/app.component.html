@@ -24,10 +24,10 @@
   </thead>
   <tbody>
     <tr *ngFor="let result of data">
-      <th scope="row">{{ result['id'] }}</th>
-      <td>{{ result['userId'] }}</td>
-      <td>{{ result['title'] }}</td>
-      <td>{{ result['body'] }}</td>
+      <th scope="row">{{ result['html_url'] }}</th>
+      <td>{{ result['userName'] }}</td>
+      <td>{{ result['email'] }}</td>
+      <td>{{ result['followers_url'] }}</td>
     </tr>
   </tbody>
 </table>

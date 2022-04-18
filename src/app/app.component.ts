@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-class Post {
+class User {
   constructor(
-    public userId: number,
-    public id: string,
-    public title: string,
-    public body: string
+    public userName: string,
+    public email: string,
+    public followers_url: string,
+    public html_url: string
   ) { }
 }
 
@@ -17,19 +17,19 @@ class Post {
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  api: string = 'https://jsonplaceholder.typicode.com/posts';
+  api: string = 'https://api.github.com/users';
   data = [];
   constructor(private http: HttpClient) {}
   ngOnInit() {
-    this.getPosts();
+    this.getUsers();
   }
-  getPosts() {
+  getUsers() {
     const promise = new Promise<void>((resolve, reject) => {
       const apiURL = this.api;
-      this.http.get<Post[]>(apiURL).subscribe({
+      this.http.get<User[]>(apiURL).subscribe({
         next: (res: any) => {
           this.data = res.map((res: any) => {
-            return new Post(res.userId, res.id, res.title, res.body);
+            return new User(res.userName, res.email, res.followers_url, res.html_url);
           });
           resolve();
         },

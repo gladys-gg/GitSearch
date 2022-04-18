@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { resolve } from 'dns';
-import { Observable } from 'rxjs';
 import { GithubService } from 'src/app/github.service';
 import { ProfileService } from 'src/app/profile.service';
 import { userInterface } from 'src/app/user';
