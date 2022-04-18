@@ -1,2 +1,5 @@
-<p>users works!</p>
-<h1>Hi there</h1>
+<ul>
+    <li *ngFor="let user of user | async">
+        {{user.avatar_url}}
+    </li>
+</ul>
