@@ -23,23 +23,6 @@
 </div>
 </div>
 
-<table class="table table-striped">
-  <thead>
-    <tr class="table-info">
-      <th scope="col">#</th>
-      <th scope="col">UID</th>
-      <th scope="col">Title</th>
-      <th scope="col">Body</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let result of data">
-      <th scope="row">{{ result['html_url'] }}</th>
-      <td>{{ result['userName'] }}</td>
-      <td>{{ result['email'] }}</td>
-      <td>{{ result['followers_url'] }}</td>
-    </tr>
-  </tbody>
-</table>
-
-
+<ul *ngFor="let user of users">
+ <li>{{"user.id"}}</li> 
+</ul>

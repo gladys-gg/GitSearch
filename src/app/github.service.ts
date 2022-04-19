@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Repos } from './repos';
+import { Observable } from 'rxjs';
+
 
 
 
@@ -10,13 +11,17 @@ import { Repos } from './repos';
 })
 export class GithubService {
   
-  constructor(private http:HttpClient) { 
+  constructor(private http:HttpClient) { }
  
+    getData():Observable<any>{
+
+      const url = "https://api.github.com/users"
+      
+      return this.http.get<any>(url)
+    }
   }
 
-  getRepo(_username:string):any{
-    return this.http.get('https://api.github.com/users/{$username}/repos');
-  }
+
 
   
-}
+
