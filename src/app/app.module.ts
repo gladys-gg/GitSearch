@@ -10,6 +10,7 @@ import { GithubprofilecardComponent } from './components/githubprofilecard/githu
 import { GithubprofiledataComponent } from './components/githubprofiledata/githubprofiledata.component';
 import { GithubAppComponent } from './components/github-app/github-app.component';
 import { FormsModule } from '@angular/forms';
+import { HighlightDirective } from './highlight.directive';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { FormsModule } from '@angular/forms';
     GithubprofilecardComponent,
     GithubprofiledataComponent,
     GithubAppComponent,
+    HighlightDirective,
     
   ],
   imports: [
