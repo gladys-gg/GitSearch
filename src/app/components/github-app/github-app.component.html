@@ -1,5 +1,5 @@
 <nav class="navbar navbar-dark bg-dark">
-    <div class="container-fluid">
+    <div class="container-fluid mt-4">
       <a class="navbar-brand" href="#">
         Git-Search
       </a>
@@ -8,19 +8,19 @@
 
 <div class="container">
     <div class="row">
-        <div class="col1">
-            <div class="card" id="bg-img">
+        <div class="col">
+            <div class="card mt-2" id="bg-img">
                 <div class="card-header text-info mb-3 text-center">
                     <h4>Git User Search</h4>
                 </div>
                 <div class="card-body">
-                    <form class="form-inline mb-4">
-                        <div class="form-group"(submit)="searchUser()">
-                            <input [(ngModel)]="githubUserQuery"  name="user" size ="50px"type="search" class="form-control" placeholder="Search Here">
+                    <form class="form-inline-block mb-4" >
+                        <div class="form-group "(submit)="searchUser()">
+                            <input [(ngModel)]="githubUserQuery"  name="user" width="50px"type="search" class="form-control" placeholder="Search Here">
                         </div>
                          
                         <div>
-                            <input type="submit" value="Search" class="btn btn-secondary btn-sm">
+                            <input type="submit" value="Search" class="btn btn-secondary btn-sm mt-3">
                         </div>
                     </form>
                 </div>

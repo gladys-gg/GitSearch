@@ -12,7 +12,7 @@ export class GithubService {
 
   user = 'gladys-gg'
 
-  UserURL:string = `https://api.github.com/users/${this.user}`
+  UserURL:string = `http://api.github.com/users/${this.user}`
   apiUrl = environment.apiUrl;
   apiKey = environment.apiKey;
 
