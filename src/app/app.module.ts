@@ -1,23 +1,32 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule} from '@angular/common/http'
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { UsersComponent } from './components/users/users.component';
-import { DatecountPipe } from './datecount.pipe';
-import { HighlightDirective } from './highlight.directive';
+import { GithubrepoComponent } from './components/githubrepo/githubrepo.component';
+import { GithubprofileComponent } from './components/githubprofile/githubprofile.component';
+import { GithubprofilecardComponent } from './components/githubprofilecard/githubprofilecard.component';
+import { GithubprofiledataComponent } from './components/githubprofiledata/githubprofiledata.component';
+import { GithubAppComponent } from './components/github-app/github-app.component';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    UsersComponent,
-    DatecountPipe,
-    HighlightDirective
+    GithubrepoComponent,
+    GithubprofileComponent,
+    GithubprofilecardComponent,
+    GithubprofiledataComponent,
+    GithubAppComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
