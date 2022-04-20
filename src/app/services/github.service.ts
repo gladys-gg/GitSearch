@@ -1,7 +1,7 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, retry, throwError } from 'rxjs';
-import { environment } from 'src/environments/environment';
+import { environment } from 'src/environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +12,7 @@ export class GithubService {
 
   user = 'gladys-gg'
 
-  UserURL:string = `http://api.github.com/users/${this.user}`
+  UserURL:string = `https://api.github.com/users/${this.user}`
   apiUrl = environment.apiUrl;
   apiKey = environment.apiKey;
 

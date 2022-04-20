@@ -4,3 +4,7 @@
     min-height: 380px;
     background-size: cover;
 }
+.li{
+    list-style: none;
+
+}
